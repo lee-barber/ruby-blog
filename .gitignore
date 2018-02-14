@@ -1,0 +1,15 @@
+
+.DS_Store
+/main.css
+/main.css.map
+
++*.scssc
++.sass-cache/
+public/css/.DS_Store
+public/css/.sass-cache
+public/css/main.css
+public/css/main.css.map
+Gemfile.lock
+
+.scssc
+.sass-cache/
