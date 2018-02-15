@@ -46,5 +46,5 @@ end
 post '/:id/create_blog' do
 	personName = name
 	user = User.find(session[:user_id])
-	Blog.create(content: params[:content], :username personName)
+	Blog.create(content: params[:content], username: personName)
 end
