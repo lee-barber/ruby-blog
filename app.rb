@@ -29,13 +29,15 @@ post '/login'  do
     @username = params[:username]
     @password = params[:password]
 
-if
-person = User.where(username: @username, password: @password).first
-    session[:user_id] = person.id
-    redirect "/#{person.id}"
-    else
-        redirect '/'
-    end
+	if
+		person = User.where(username: @username, password: @password).first
+	    session[:user_id] = person.id
+			name = person.username
+	  redirect "/#{person.id}"
+	else
+	  redirect '/'
+	end
+
 end
 
 
@@ -44,3 +46,8 @@ get '/:id/account' do
 	erb :account
 end
 
+post '/:id/create_blog' do
+	personName = name
+	user = User.find(session[:user_id])
+	Blog.create(content: params[:content], :username personName)
+end
