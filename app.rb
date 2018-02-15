@@ -21,18 +21,29 @@ post '/signup' do
 end
 
 get '/:id' do
-@person = User.find(params[:id])
-erb :home
+	@person = User.find(params[:id])
+	erb :home
 end
 
 post '/login'  do
     @username = params[:username]
     @password = params[:password]
-if
-person = User.where(username: @username, password: @password).first
-    session[:user_id] = person.id
-    redirect "/#{person.id}"
-    else
-        redirect '/'
-    end
+	if
+		person = User.where(username: @username, password: @password).first
+	    session[:user_id] = person.id
+
+	  redirect "/#{person.id}"
+	else
+	  redirect '/'
+	end
 end
+
+get '/:id/account' do
+	@person = User.find(params[:id])
+	erb :account
+end
+
+# post '/create_blog' do
+# 	Blog.create(content: params[:content], username: user.username)
+# 	redirect '/home'
+# end
