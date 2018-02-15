@@ -1,12 +1,12 @@
-<h3>Welcome!</h3> <%= @person.username %>
+<h3>Welcome <%= @person.username %> !</h3>
 
-<a href='/people/<%= @person.id %>/edit'>Edit</a>
+
+
+<a href='/<%= @person.id %>/account'>Account Settings</a>
 
 <h3>Create a Blog Post</h3>
 
 <form action='/create_blog' method='post'>
-	<input type="text" name="title" placeholder='title'>	
-	<input type="text" name="content" placeholder='content'>
+	<input type="text" name="content" placeholder='Blog'>
 	<input type="submit" value="create blog">
-
 </form>

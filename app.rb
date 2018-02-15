@@ -21,13 +21,14 @@ post '/signup' do
 end
 
 get '/:id' do
-@person = User.find(params[:id])
-erb :home
+	@person = User.find(params[:id])
+	erb :home
 end
 
 post '/login'  do
     @username = params[:username]
     @password = params[:password]
+
 if
 person = User.where(username: @username, password: @password).first
     session[:user_id] = person.id
@@ -38,4 +39,8 @@ person = User.where(username: @username, password: @password).first
 end
 
 
+get '/:id/account' do
+	@person = User.find(params[:id])
+	erb :account
+end
 
