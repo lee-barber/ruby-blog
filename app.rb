@@ -36,3 +36,6 @@ person = User.where(username: @username, password: @password).first
         redirect '/'
     end
 end
+
+
+
