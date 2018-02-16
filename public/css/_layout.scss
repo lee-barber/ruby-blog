@@ -1,11 +1,33 @@
-.main-body {
-    background-image: url('../img/dark-triangles.png')
+// .main-body {
+//     background-image: url('../img/dark-triangles.png')
+// }
+
+#video-background {
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
 }
 
-.login-text {
-    background-color: white;
-    margin: 0 auto;
-    width: 80px;
+.top-text {
+    // background-color: white;
+    margin-left: 2%;
+    width: 800px;
+    height: 40px;
+    margin-top: 100px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.connect {
+    // background-color: white;
+    margin-left: 2%;
+    width: 500px;
     height: 40px;
     margin-top: 100px;
     margin-bottom: 25px;
@@ -14,7 +36,8 @@
 }
 
 .login-box {
-    background-color: grey;
+    background-color: #F2F2F2;
+    border-radius: 25px;
     margin: 0 auto;
     width: 400px;
     height: 75px;
@@ -24,11 +47,24 @@
 
 .signup-text {
     background-color: white;
+    border-radius: 5px;
     margin: 0 auto;
-    width: 140px;
-    height: 40px;
+    width: 70px;
+    height: 25px;
     margin-top: 25px;
-    margin-left: 750px;
+    margin-left: 790px;
     text-align: center;
-    font-size: 25px;
+    font-size: 15px;
 }
+
+.signup-container a {
+    color: blue;
+    text-decoration: none;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+

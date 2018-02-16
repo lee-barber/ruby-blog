@@ -1,10 +1,17 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body class="main-body">
 
-<div class="login-text"><h4>Login</h4></div>
+<video id="video-background" autoplay loop muted plays-inline>
+	<source src="../vid/bubbles.mp4" type="video/mp4">
+</video>
+
+<div class="top-text"><h3>PowerPost connects you with the world.</h3></div>
+
+<div class="connect"><h4>Join our online community.</h4></div>
 
 <form class="login-box" action='/login' method='post'>
 	<input type="text" name="username" placeholder='username'>
@@ -12,6 +19,10 @@
 	<input type="submit" value="Sign in">
 </form>
 
-<div class="signup-text"><h4><a href="/signup">Sign Up</a></h4></div>
+<div class="signup-container">
+<div class="signup-text">
+	<h4><a href="/signup">Sign Up</a></h4>
+</div>
+</div>
 
 </body>

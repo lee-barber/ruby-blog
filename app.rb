@@ -7,7 +7,6 @@ require 'pry'
 set :database, "sqlite3:main.sqlite3"
 set :sessions, true
 
-
 get '/' do
 	erb :index
 end
