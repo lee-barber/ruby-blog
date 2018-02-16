@@ -1,7 +1,5 @@
 <h3>Welcome <%= @person.username %> !</h3>
 
-
-
 <a href='/<%= @person.id %>/account'>Account Settings</a>
 
 <h3>Create a Blog Post</h3>
@@ -10,3 +8,14 @@
 	<input type="text" name="content" placeholder='Blog'>
 	<input type="submit" value="create blog">
 </form>
+
+
+<div>
+  <h2>blogs</h2>
+  <% @blogs.reverse.take(10).each do |b| %>
+  <div class="">
+    <a href="<%= b.username %>"><div><%= b.username %></div></a>
+    <div><%= b.content %></div>
+  </div>
+  <% end %>
+</div>

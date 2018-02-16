@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require './models'
+require 'pry'
 
 
 set :database, "sqlite3:main.sqlite3"
@@ -21,6 +22,7 @@ end
 
 get '/:id' do
 	@person = User.find(params[:id])
+	@blogs = Blog.all
 	erb :home
 end
 
@@ -36,7 +38,6 @@ post '/login'  do
 	else
 	  redirect '/'
 	end
-
 end
 
 get '/:id/account' do
@@ -44,7 +45,17 @@ get '/:id/account' do
 	erb :account
 end
 
-# get '/blogs/:id' do
-# @blog = Blog.find(params[:id])
-# erb :blog
-# end
+post "/create_blog" do
+	user = User.find(session[:user_id])
+	Blog.create(content: params[:content], username: user.username, user_id: user.id)
+	redirect "/#{user.id}"
+end
+
+get '/:id/blogs' do
+	erb :blogs
+end
+
+get '/blogs/:id' do
+	@blog = Blog.find(params[:id])
+	erb :home
+end
