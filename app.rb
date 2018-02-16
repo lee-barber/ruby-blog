@@ -6,7 +6,6 @@ require './models'
 set :database, "sqlite3:main.sqlite3"
 set :sessions, true
 
-
 get '/' do
 	erb :index
 end
@@ -40,14 +39,12 @@ post '/login'  do
 
 end
 
-
 get '/:id/account' do
 	@person = User.find(params[:id])
 	erb :account
 end
 
-post '/:id/create_blog' do
-	personName = name
-	user = User.find(session[:user_id])
-	Blog.create(content: params[:content], :username personName)
-end
+# get '/blogs/:id' do
+# @blog = Blog.find(params[:id])
+# erb :blog
+# end
