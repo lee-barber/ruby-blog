@@ -39,8 +39,8 @@
     background-color: #F2F2F2;
     border-radius: 25px;
     margin: 0 auto;
-    width: 400px;
-    height: 75px;
+    width: 550px;
+    height: 100px;
     text-align: center;
     font-size: 50px;
 }
@@ -64,6 +64,58 @@
 
 * {
     font-family: 'Open Sans', sans-serif;
+}
+
+.user-container {
+    margin: 10px;
+}
+
+
+/* unvisited link */
+a:link {
+    color: blue;
+}
+
+/* visited link */
+a:visited {
+    color: blue;
+}
+
+/* mouse over link */
+a:hover {
+    color: blue;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+// .navlinks {
+//     width: 700px;
+//     height: 50px;   
+//     padding-left: 2px;
+// }
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+    
+.navbar li {
+    display: inline-block;
+    width: 100px;   
+}
+
+input[type=text], input[type=password], input[type=email] {
+    font-size: 20px;
+    margin-bottom:10px;
+    padding: 8px 6px;
+    height: 38px;
+    width:250px;
+    box-sizing: border-box;
 }
 
 
