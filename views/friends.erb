@@ -3,5 +3,7 @@
 <h2>List of all Users:</h2>
 
 <% @users.each do |u| %>
-<a href='/users/<%= u.id %>'><div><%= u.username %></div></a>
+  <a href="/<%= u.id %>"><div><%= u.username %></div></a>
 <% end %>
+
+	

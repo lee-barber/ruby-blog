@@ -1,21 +1,30 @@
 <h3>Welcome <%= @person.username %> !</h3>
-
-<a href='/<%= @person.id %>/account'>Account Settings</a>
-
+<div class="navbar">
+    <ul>
+        <li><a href="/<%= @person.id %>/settings">Settings</a></li>
+        <li><a href="/<%= @person.id %>/friends">Friends</a></li>
+        <li><a href="/<%= @person.id %>/profile">Profile</a></li>
+   		<li><form action="/logout" method="post"><input type="submit" value="Logout"></form></li>
+   		<!-- <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"> -->
+    </ul>
+</div>
 <h3>Create a Blog Post</h3>
-
 <form action='/create_blog' method='post'>
-	<input type="text" name="content" placeholder='Blog'>
-	<input type="submit" value="create blog">
+    <input type="text" name="content" placeholder='Blog'>
+    <input type="submit" value="create blog">
 </form>
-
-
 <div>
-  <h2>blogs</h2>
-  <% @blogs.reverse.take(10).each do |b| %>
-  <div class="">
-    <a href="<%= b.username %>"><div><%= b.username %></div></a>
-    <div><%= b.content %></div>
-  </div>
-  <% end %>
+    <h2>Blogs</h2>
+    <% @blogs.reverse.take(10).each do |b| %>
+        <div class="user-container">
+            <a href="<%= b.username %>">
+                <div>
+                    <%= b.username %>
+                </div>
+            </a>
+            <div>
+                <%= b.content %>
+            </div>
+        </div>
+        <% end %>
 </div>
