@@ -10,7 +10,7 @@
     <% @blogs.reverse.take(10).each do |b| %>
     <div class="blog-posts"
         <div class="user-container">
-            <a href="<%= b.username %>">
+            <a href="/blogs/<%= b.user_id %>">
                 <div>
                     <%= b.username %>
                 </div>
