@@ -84,7 +84,8 @@ end
 # gets the blog post from one specific user id and prints it to the home page...
 # need to figure out how to link this to the profile.erb page
 get '/blogs/:id' do
-	@blog = Blog.find(params[:id])
+	@user = Blog.find(session[:user_id])
+	@blogs = @user.blogs
 	erb :profile
 end
 
