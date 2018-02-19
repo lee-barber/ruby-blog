@@ -1,3 +1,8 @@
 <h1>Welcome to your profile!</h1>
 
+<!-- Space for NavBar -->
 
+<h1><%= @person.username %>'s Blogs</h1>
+<% @blog.each do |t|%>
+  <div><%= t.content %></div>
+<% end %>

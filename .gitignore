@@ -11,6 +11,7 @@ public/css/main.css
 public/css/main.css.map
 Gemfile.lock
 sqlite3:main.sqlite3
+main.sqlite3
 
 .scssc
 .sass-cache/

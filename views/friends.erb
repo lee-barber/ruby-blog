@@ -1,9 +1,11 @@
-<h1 class="friend-title">Hello, Friend!</h1>
+<h1 class="friend-title">Hello, <%= @person.fname %>!</h1>
+
+<!-- Space for NavBar -->
 
 <h2>List of all Users:</h2>
 
 <% @users.each do |u| %>
-  <a href="/<%= u.id %>"><div><%= u.username %></div></a>
+  <a href="/<%= u.id %>"><div><%= u.fname %></div></a>
 <% end %>
 
 	
