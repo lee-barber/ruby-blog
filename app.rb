@@ -29,7 +29,7 @@ end
 
 # gets id of user and prints their specific homepage
 get '/:id' do
-	@person = User.find(params[:id])
+	@person = User.find(session[:user_id])
 	@blogs = Blog.all
 	erb :home
 end
@@ -84,12 +84,13 @@ end
 # gets the blog post from one specific user id and prints it to the home page...
 # need to figure out how to link this to the profile.erb page
 get '/blogs/:id' do
-	@blog = Blog.find(params[:id])
+	@person = User.find(params[:id])
+	@blogs = @person.blogs
 	erb :profile
 end
 
 
-	# Imports the person variable so that the friends page can be accessed	
+	# Imports the person variable so that the friends page can be accessed
 get '/:id/friends' do
 	# gets the user id and prints their "friends" (all other users) to the friends page
 	@person = User.find(params[:id])
@@ -105,7 +106,25 @@ end
 
 # gets the profile of the current user and prints it to the profile page
 get '/profile/:id' do
-  @person = User.find(params[:id])
-  @blog = @person.blogs
+  @person = User.find(session[:user_id])
+  @blogs = @person.blogs
   erb :"/profile"
+end
+
+get '/:id/editBlog' do
+	@person = User.find(session[:user_id])
+	@blogid = params[:id]
+	erb :'/editBlog'
+end
+
+post '/editBlog/:id' do
+	blog = params[:id]
+	Blog.find(blog).update(content: params[:content])
+	p blog
+	redirect '/editBlog'
+end
+
+post '/:id/deleteBlog' do
+	Blog.find(params[:id]).destroy
+	redirect '/profile'
 end

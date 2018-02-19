@@ -3,6 +3,14 @@
 <!-- Space for NavBar -->
 
 <h1><%= @person.username %>'s Blogs</h1>
-<% @blog.each do |t|%>
+<% @blogs.each do |t|%>
   <div><%= t.content %></div>
+  <div class="">
+    <form class="editBlog" action="/<%= t.id %>/editBlog" method="get">
+      <input type="submit" name="" value="">
+    </form>
+    <form class="deleteBlog" action="/<%= t.id %>/deleteBlog" method="post">
+      <input type="submit" name="" value="">
+    </form>
+  </div>
 <% end %>
