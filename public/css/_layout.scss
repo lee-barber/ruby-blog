@@ -117,6 +117,23 @@ input[type=text], input[type=password], input[type=email] {
     width:250px;
     box-sizing: border-box;
 }
+#input-content {
+    font-size: 14px;
+    margin-bottom:10px;
+    padding: 8px 6px;
+    // height: 100px;
+    // width:450px;
+    word-wrap: break-word;
+    text-wrap: supress;
+    box-sizing: border-box;
+    resize: none;
+}
 
-
-
+.blog-posts {
+    font-size: 20px;
+    margin-bottom: 60px;
+    padding: 8px 6px;
+    height: 40px;
+    width: 525px;
+    box-sizing: border-box; 
+}

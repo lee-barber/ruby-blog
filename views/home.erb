@@ -1,21 +1,14 @@
-<h3>Welcome <%= @person.username %> !</h3>
-<div class="navbar">
-    <ul>
-        <li><a href="/<%= @person.id %>/settings">Settings</a></li>
-        <li><a href="/<%= @person.id %>/friends">Friends</a></li>
-        <li><a href="/<%= @person.id %>/profile">Profile</a></li>
-   		<li><form action="/logout" method="post"><input type="submit" value="Logout"></form></li>
-   		<!-- <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"> -->
-    </ul>
-</div>
+<h3>Welcome <%= @person.username %>!</h3>
+
 <h3>Create a Blog Post</h3>
 <form action='/create_blog' method='post'>
-    <input type="text" name="content" placeholder='Blog'>
+    <textarea id="input-content" maxlength="150" rows="4" cols="40" name="content" placeholder='Blog'></textarea><br>
     <input type="submit" value="create blog">
 </form>
 <div>
     <h2>Blogs</h2>
     <% @blogs.reverse.take(10).each do |b| %>
+    <div class="blog-posts"
         <div class="user-container">
             <a href="<%= b.username %>">
                 <div>

@@ -86,6 +86,8 @@ end
 
 # gets the user id and prints their "friends" (all other users) to the friends page
 get '/:id/friends' do	
+	# Imports the person variable so that the friends page can be accessed
+	@person = User.find(params[:id])
 	@users = User.all
 	erb :friends
 end
@@ -97,11 +99,11 @@ post '/logout' do
 end
 
 # gets the profile of the current user and prints it to the profile page
-get '/:id/profile' do
-  @user = User.find(session[:user_id])
-erb :profile
+get '/profile/:id' do
+  @person = User.find(params[:id])
+  @blog = @person.blogs
+  erb :"/profile"
 end
-
 
 
 
