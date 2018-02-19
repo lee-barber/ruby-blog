@@ -19,8 +19,12 @@ end
 
 # prints signup page
 post '/signup' do
+	if params[:username] == '' || params[:password] == ''
+		redirect '/signup'
+	else
 	User.create(fname: params[:fname], lname: params[:lname], username: params[:username], password: params[:password], email: params[:email])
 	redirect '/'
+	end
 end
 
 # gets id of user and prints their specific homepage
@@ -65,7 +69,7 @@ post "/delete_user" do
   redirect '/'
 end
 
-# prints the blog post to the page after clicking "submit" and then shows that specific users blog posts 
+# prints the blog post to the page after clicking "submit" and then shows that specific users blog posts
 post "/create_blog" do
 	person = User.find(session[:user_id])
 	Blog.create(content: params[:content], user_id: person.id, username: person.username)
@@ -85,7 +89,7 @@ get '/blogs/:id' do
 end
 
 # gets the user id and prints their "friends" (all other users) to the friends page
-get '/:id/friends' do	
+get '/:id/friends' do
 	@users = User.all
 	erb :friends
 end
@@ -101,10 +105,3 @@ get '/:id/profile' do
   @user = User.find(session[:user_id])
 erb :profile
 end
-
-
-
-
-
-
-
