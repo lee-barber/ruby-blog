@@ -1,3 +1,59 @@
+.nav-container {
+	position: relative;
+}
+
+.logo {
+    height: 50px;
+    width: 200px;
+    display: block;
+
+}
+
 .navbar {
-	margin-top: 25px;
+	background-color: #305244;
+	width: 100%;	
+	z-index: 100;	
+	text-align: center;
+}
+
+.navbar li{
+	display: inline-block;
+	padding-bottom: 5px;
+	width: 200px;
+	text-align: center;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar a {
+	margin-left: 65px;
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	color: blue;
+	font: 24px 'Open Sans', sans-serif;
+}
+
+.navbar a:hover {
+	opacity: 0.6;
 }

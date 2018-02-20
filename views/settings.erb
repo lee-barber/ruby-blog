@@ -1,15 +1,14 @@
-<h3>Edit page</h3>
 
-<!-- Space for NavBar -->
-
+<div class ="settings-fields">
+<h3>Settings</h3>
 <form id="updateForm" action='/update_user' method='post'>
-  <input type="text" name="fname" placeholder="First Name">
-  <input type="text" name="laname" placeholder="Last Name">
-  <input type="text" name="email" placeholder="email">
-  <input type="text" name="username" placeholder="Username">
+  <div><input type="text" name="fname" placeholder="First Name"></div>
+  <div><input type="text" name="laname" placeholder="Last Name"></div>
+  <div><input type="text" name="email" placeholder="Email"></div>
+  <div><input type="text" name="username" placeholder="Username"></div>
 
-  <input id="updatePassword" type="password" name="password" placeholder="Password">
-  <input id="updateButton" type="submit" value="Update">
+  <div><input id="updatePassword" type="password" name="password" placeholder="Password"></div>
+  <div><input id="updateButton" type="submit" value="Update"></div>
 
 </form>
 
@@ -35,3 +34,4 @@ upButton.addEventListener('click', function() {
     }
 })
 </script>
+
