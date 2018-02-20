@@ -3,7 +3,7 @@
 <!-- Space for NavBar -->
 
 <h1><%= @person.username %>'s Blogs</h1>
-<% @blogs.each do |t|%>
+<% @blogs.reverse.each do |t|%>
   <div><%= t.content %></div>
   <div class="">
     <form class="editBlog" action="/<%= t.id %>/editBlog" method="get">
