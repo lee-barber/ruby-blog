@@ -29,9 +29,13 @@ end
 
 # gets id of user and prints their specific homepage
 get '/:id' do
-	@person = User.find(session[:user_id])
-	@blogs = Blog.all
-	erb :home
+	if @person = User.find(session[:user_id]) == nil
+		redirect '/'
+	else
+		@person = User.find(session[:user_id])
+		@blogs = Blog.all
+		erb :home
+	end
 end
 
 # checks params of username/password and allows login if values match
@@ -57,15 +61,26 @@ end
 
 # prints the updated user params and then redirects to that users homepage
 post '/update_user' do
-  person = User.find(session[:user_id])
-  person.update(fname: params[:fname], lname: params[:lname], email: params[:email], username: params[:username], password: params[:password])
-  # we needd to add something here that will disallow the user from entering blank fields
-  redirect "/#{person.id}"
+	if params[:username] == '' || params[:password] == ''
+		person = User.find(session[:user_id])
+		redirect "/#{person.id}/settings"
+	else
+		person = User.find(session[:user_id])
+	  person.update(fname: params[:fname], lname: params[:lname], email: params[:email], username: params[:username], password: params[:password])
+		# we needd to add something here that will disallow the user from entering blank fields
+	  redirect "/#{person.id}"
+	end
 end
+#   person = User.find(session[:user_id])
+#   person.update(fname: params[:fname], lname: params[:lname], email: params[:email], username: params[:username], password: params[:password])
+#   # we needd to add something here that will disallow the user from entering blank fields
+#   redirect "/#{person.id}"
+# end
 
 post "/delete_user" do
-  person = User.find(session[:user_id])
-  person.destroy
+  @person = User.find(session[:user_id])
+	session[:user_id] = nil
+  @person.destroy
   redirect '/'
 end
 
