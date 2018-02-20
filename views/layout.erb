@@ -5,12 +5,13 @@
     <link rel="stylesheet" href="/css/main.css">
     <title>PowerPost</title>
 </head>
-
-<body>
+        
     <header>
+        <div class="nav-container">
         <div class="navbar">
             <ul>
    	            <% if session[:user_id] != nil%>
+                <li><img class="logo" src="../img/powerpost1.png"></li>
                 <li><a href="/<%= @person.id %>">Home</a></li>
                 <li><a href="/<%= @person.id %>/settings">Settings</a></li>
                 <li><a href="/<%= @person.id %>/friends">Friends</a></li>
@@ -20,15 +21,16 @@
                         <input type="submit" value="Logout">
                     </form>
                 </li>
-                <%else%>
+               <!--  <%#else%> -->
                 <%end%>
                 <!-- <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"> -->
             </ul>
         </div>
     </header>
-    <div class="main-container">
+    </div class="nav-container">
         <%= yield %>
     </div>
+
 </body>
 
 </html>
