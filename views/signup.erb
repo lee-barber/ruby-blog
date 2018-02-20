@@ -1,12 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<video id="video-background" autoplay loop muted plays-inline>
+    <source src="../vid/bubbles.mp4" type="video/mp4">
+</video>
+
+<div class="signup-fields">
 <h1>Sign Up</h1>
 <form class="signUp" action="/signup" method="post">
-    <input type="text" name="fname" placeholder="First Name">
-    <input type="text" name="lname" placeholder="Last Name">
-    <input type="text" name="username" placeholder="Username">
-    <input id="password" type="text" name="password" placeholder="Password">
-    <input type="text" name="email" placeholder="Email">
-    <input id="button" type="submit" value="Sign Up">
+    <div id="first"><input type="text" name="fname" placeholder="First Name">
+    <div id="last"><input type="text" name="lname" placeholder="Last Name"></div>
+    <div id="user"><input type="text" name="username" placeholder="Username"></div>
+    <div id="pass"><input id="password" type="password" name="password" placeholder="Password"></div>
+    <div id="email"><input type="text" name="email" placeholder="Email"></div>
+    <div id="signup-button"><input id="button" type="submit" value="Sign Up"></div>
+    <div id="back-button"><a href="/"> << Back</a></div>
 </form>
+</div>
 <script type="text/javascript">
 var password = document.getElementById('password');
 var button = document.getElementById('button');
@@ -24,3 +38,6 @@ button.addEventListener('click', function() {
     }
 })
 </script>
+
+</body>
+</html>
