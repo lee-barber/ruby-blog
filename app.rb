@@ -86,7 +86,7 @@ end
 get '/blogs/:id' do
 	@person = User.find(params[:id])
 	@blogs = @person.blogs
-	erb :profile
+	erb :blog
 end
 
 
@@ -94,6 +94,7 @@ end
 get '/:id/friends' do
 	# gets the user id and prints their "friends" (all other users) to the friends page
 	@person = User.find(params[:id])
+	@blogs = @person.blogs
 	@users = User.all
 	erb :friends
 end
