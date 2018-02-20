@@ -1,29 +1,26 @@
 <h1>Sign Up</h1>
-
 <form class="signUp" action="/signup" method="post">
-  <input type="text" name="fname" placeholder="First Name">
-  <input type="text" name="lname" placeholder="Last Name">
-  <input type="text" name="username" placeholder="Username">
-  <input id="password" type="text" name="password" placeholder="Password">
-  <input type="text" name="email" placeholder="Email">
-  <input id="button" type="submit" value="Sign Up">
+    <input type="text" name="fname" placeholder="First Name">
+    <input type="text" name="lname" placeholder="Last Name">
+    <input type="text" name="username" placeholder="Username">
+    <input id="password" type="text" name="password" placeholder="Password">
+    <input type="text" name="email" placeholder="Email">
+    <input id="button" type="submit" value="Sign Up">
 </form>
-
-
 <script type="text/javascript">
 var password = document.getElementById('password');
 var button = document.getElementById('button');
 var form = document.getElementsByClassName('signUp')[0]
 
-button.addEventListener('click', function(){
+button.addEventListener('click', function() {
     console.log(password.value)
 
-            let number = password.value;
-            if(number.match(/\d+/g)){
-                form.submit()
-            }else {
-                alert('Password must include a number')
-            }
+    let number = password.value;
+    if (number.match(/\d+/g)) {
+        form.submit()
+    } else {
+        event.preventDefault();
+        alert('Password must include a number')
+    }
 })
-
 </script>

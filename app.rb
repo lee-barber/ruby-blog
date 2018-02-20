@@ -86,7 +86,7 @@ end
 get '/blogs/:id' do
 	@person = User.find(params[:id])
 	@blogs = @person.blogs
-	erb :profile
+	erb :blog
 end
 
 
