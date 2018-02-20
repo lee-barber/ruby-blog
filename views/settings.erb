@@ -2,16 +2,34 @@
 
 <!-- Space for NavBar -->
 
-<form action='/update_user' method='post'>
+<form id="updateForm" action='/update_user' method='post'>
   <input type="text" name="fname" placeholder="First Name">
   <input type="text" name="laname" placeholder="Last Name">
   <input type="text" name="email" placeholder="email">
   <input type="text" name="username" placeholder="Username">
-  <input type="text" name="password" placeholder="Password">
-  <input type="submit" value="Update">
+  <input id="updatePassword" type="text" name="password" placeholder="Password">
+  <input id="updateButton" type="submit" value="Update">
 </form>
 
 <h3>Delete Account</h3>
 <form action="/delete_user" method="post">
   <input type="submit" value="Delete Account">
 </form>
+
+<script type="text/javascript">
+var upPassword = document.getElementById('updatePassword');
+var upButton = document.getElementById('updateButton');
+var upForm = document.getElementsByClassName('updateForm')[0]
+
+upButton.addEventListener('click', function() {
+    console.log(upPassword.value)
+
+    let upNumber = upPassword.value;
+    if (upNumber.match(/\d+/g)) {
+        upForm.submit()
+    } else {
+        event.preventDefault();
+        alert('Password must include a number')
+    }
+})
+</script>
