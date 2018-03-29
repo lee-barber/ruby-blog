@@ -14,4 +14,6 @@ We added the pry gem to help with debugging error's.
 
 Team member roles:
 
-Lee Barber created the user's model
+Lee Barber created the User's model, sign up option & was the master of the project.
+
+Aaron Brown created the home page.
