@@ -6,7 +6,7 @@ gem 'sinatra'
 # must have the sqlite engine installed in order to build this module.
 # The module is only COMPATIBLE WITH SQLite 3.6.16 OR NEWER!
 gem 'sqlite3'
-# Extends Sinatra with extension methods and Rake tasks for dealing with an SQL database using the ActiveRecord ORM.
+# Enables Sinatra to have extension methods, and Rake tasks for dealing with an SQL database using the ActiveRecord ORM.
 gem 'sinatra-activerecord'
 # sinatra extension methods & rake tasks in order to deal with an sql database using the activerecord object-relational mapping.
 gem 'rake'
