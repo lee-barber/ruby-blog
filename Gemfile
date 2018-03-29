@@ -13,3 +13,4 @@ gem 'rake'
 # Rake is a program implemented in ruby, tasks and dependencies are specified in standard ruby syntax.
 # Rake supports rule patterns to synthesize implicit tasks.
 gem 'pry'
+# upper-echelon debugging tool
