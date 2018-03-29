@@ -18,4 +18,4 @@ Lee Barber created the User's model, sign up option & was the master of the proj
 
 Aaron Brown created the home page.
 
-Andrew Gentile installed the gems & detailed the README.md.
+Andrew Gentile installed the gems, detailed the README.md & spellcheck.
