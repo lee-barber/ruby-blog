@@ -1,11 +1,9 @@
 # ruby-blog
-
 Gems Used:
 
+We needed the sinatra gem in order to interact with the sqlite3 database.
 
-
-
-We added the sqlite3 gem because the rake tasks deal with an SQL database using the ActiveRecord ORM
+We added the sqlite3 gem because the rake tasks deal with an SQL database using the ActiveRecord ORM.
 
 We added the sinatra-activerecord gem because it helps with extending sinatra with activerecord helpers.
 

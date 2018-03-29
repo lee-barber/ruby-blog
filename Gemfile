@@ -2,7 +2,7 @@ source "https://www.rubygems.org"
 
 # sinatra is a domain specific language that makes creating web applications extremely easier in Ruby.
 gem 'sinatra'
-# this enables ruby to interface with the sqlite3 database engine (http://www.sqlite.org),
+# this enables ruby to interact with the sqlite3 database engine (http://www.sqlite.org),
 # must have the sqlite engine installed in order to build this module.
 # The module is only COMPATIBLE WITH SQLite 3.6.16 OR NEWER!
 gem 'sqlite3'
