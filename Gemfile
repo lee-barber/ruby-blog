@@ -10,4 +10,6 @@ gem 'sqlite3'
 gem 'sinatra-activerecord'
 # sinatra extension methods & rake tasks in order to deal with an sql database using the activerecord object-relational mapping.
 gem 'rake'
+# Rake is a program implemented in ruby, tasks and dependencies are specified in standard ruby syntax.
+# Rake supports rule patterns to synthesize implicit tasks.
 gem 'pry'
