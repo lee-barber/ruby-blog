@@ -17,3 +17,5 @@ Team member roles:
 Lee Barber created the User's model, sign up option & was the master of the project.
 
 Aaron Brown created the home page.
+
+Andrew Gentile installed the gems & detailed the README.md.
